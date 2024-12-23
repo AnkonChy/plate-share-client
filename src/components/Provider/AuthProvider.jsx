@@ -8,9 +8,8 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from "firebase/auth";
-
 import auth from "../../firebase/firebase.init";
-// export const AuthContext = createContext();
+
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -29,7 +28,7 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const handleGoogleLogin = () => {
+  const signInWithGoogle = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
@@ -47,21 +46,6 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const resetPass = (email) => {
-    sendPasswordResetEmail(auth, email);
-  };
-  const authInfo = {
-    handleRegister,
-    handleLogin,
-    handleGoogleLogin,
-    handleLogout,
-    user,
-    setUser,
-    manageProfile,
-    resetPass,
-    loading,
-  };
-
   useEffect(() => {
     const unsubscriber = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -72,6 +56,17 @@ const AuthProvider = ({ children }) => {
       };
     });
   }, []);
+  const authInfo = {
+    handleRegister,
+    handleLogin,
+    signInWithGoogle,
+    handleLogout,
+    user,
+    setUser,
+    manageProfile,
+    loading,
+  };
+
   return (
     <div>
       <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

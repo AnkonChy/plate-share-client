@@ -5,14 +5,18 @@ import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { handleRegister, user, handleGoogleLogin, manageProfile, setUser } =
+  const { handleRegister, signInWithGoogle, manageProfile, setUser } =
     useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleGoogleLoginbtn = () => {
-    handleGoogleLogin().then((res) => {
-      navigate("/");
-    });
+    try {
+      signInWithGoogle().then((res) => {
+        navigate("/");
+      });
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   const handleSubmit = (e) => {

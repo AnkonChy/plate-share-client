@@ -17,10 +17,10 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-lg md:text-xl font-semibold gap-6">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/allMovies">Available Foods</NavLink>
-          <NavLink to="/addMovies">Add Food</NavLink>
-          <NavLink to="/myFavourite">Manage My Foods</NavLink>
-          <NavLink to="/aboutUs">My Food Request</NavLink>
+          <NavLink to="/availableFoods">Available Foods</NavLink>
+          <NavLink to="/addFood">Add Food</NavLink>
+          <NavLink to="/manageMyFood">Manage My Foods</NavLink>
+          <NavLink to="/foodRequest">My Food Request</NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-3">
@@ -84,10 +84,10 @@ const Navbar = () => {
             className="z-10 menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 p-2 shadow right-0 gap-3"
           >
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/allMovies">Available Foods</NavLink>
-            <NavLink to="/addMovies">Add Food</NavLink>
-            <NavLink to="/myFavourite">Manage My Foods</NavLink>
-            <NavLink to="/aboutUs">My Food Request</NavLink>
+            <NavLink to="/availableFoods">Available Foods</NavLink>
+            <NavLink to="/addFood">Add Food</NavLink>
+            <NavLink to="/manageMyFood">Manage My Foods</NavLink>
+            <NavLink to="/foodRequest">My Food Request</NavLink>
           </ul>
         </div>
       </div>

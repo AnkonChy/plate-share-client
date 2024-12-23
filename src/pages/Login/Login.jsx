@@ -5,10 +5,9 @@ import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../components/Provider/AuthProvider";
 const Login = () => {
-  const { handleLogin, handleGoogleLogin } = useContext(AuthContext);
+  const { handleLogin, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
   const {
     register,
     handleSubmit,
@@ -16,9 +15,13 @@ const Login = () => {
   } = useForm();
 
   const handleGoogleLoginbtn = () => {
-    handleGoogleLogin().then((res) => {
-      navigate(location?.state ? location.state : "/");
-    });
+    try {
+      signInWithGoogle().then((res) => {
+        navigate(location?.state ? location.state : "/");
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const onSubmit = (data) => {
