@@ -43,7 +43,7 @@ const AddFood = () => {
 
   return (
     <div>
-      <div className="bg-[#F4F3F0] lg:p-24">
+      <div className="bg-[#F4F3F0] p-4 lg:p-24">
         <h2 className="text-3xl text-center font-bold">Add Food</h2>
         <form onSubmit={handleSubmit}>
           <div className="md:flex gap-6 my-3">
