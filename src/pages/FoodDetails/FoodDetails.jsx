@@ -3,26 +3,62 @@ import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../components/Provider/AuthProvider";
 import DatePicker from "react-datepicker";
 import { format } from "date-fns";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const FoodDetails = () => {
   const { user } = useContext(AuthContext);
   const foodData = useLoaderData();
-  console.log(foodData);
   const [startDate, setStartDate] = useState(new Date());
 
   const {
     _id,
     name,
-
     image,
-    quantity,
     pickLocation,
     expDate,
     notes,
+    quantity,
     donatorName,
     donatorImg,
     donatorEmail,
   } = foodData;
+
+  //food requested
+  const handleFoodRequest = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const image = form.image.value;
+    const foodId = form.foodId.value;
+    const donatorEmail = form.donatorEmail.value;
+    const donatorName = form.donatorName.value;
+    const pickLocation = form.pickLocation.value;
+    const expDate = startDate;
+    const notes = form.notes.value;
+
+    const foodInfo = {
+      name,
+      image,
+      foodId,
+      pickLocation,
+      expDate,
+      notes,
+      donatorName,
+      donatorEmail,
+    };
+
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/addFoodRequest`,
+        foodInfo
+      );
+      // form.reset();
+      toast.success("Food Request Successfully !!!");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
   return (
     <div className="w-10/12 mx-auto my-10">
       <div className="lg:flex lg:flex-row items-center">
@@ -80,7 +116,7 @@ const FoodDetails = () => {
               className="modal modal-bottom sm:modal-middle"
             >
               <div className="modal-box">
-                <form>
+                <form onSubmit={handleFoodRequest}>
                   <div className="md:flex gap-6 my-3">
                     <div className="form-control md:w-1/2 mt-6 md:mt-0">
                       <label className="label font-bold">
@@ -88,7 +124,7 @@ const FoodDetails = () => {
                       </label>
                       <input
                         type="text"
-                        name="name"
+                        name="food-name"
                         readOnly
                         defaultValue={name}
                         className="input input-bordered"
@@ -117,7 +153,7 @@ const FoodDetails = () => {
                       </label>
                       <input
                         type="text"
-                        name="name"
+                        name="foodId"
                         readOnly
                         defaultValue={_id}
                         placeholder="Food Id"
@@ -135,6 +171,7 @@ const FoodDetails = () => {
                         type="url"
                         defaultValue={pickLocation}
                         readOnly
+                        name="pickLocation"
                         placeholder="Pickup Location"
                         className="input input-bordered"
                         required
@@ -150,6 +187,7 @@ const FoodDetails = () => {
                         type="text"
                         placeholder="Donator Email"
                         readOnly
+                        name="donatorEmail"
                         defaultValue={donatorEmail}
                         className="input input-bordered"
                         required
@@ -164,6 +202,7 @@ const FoodDetails = () => {
                       <input
                         type="url"
                         defaultValue={donatorName}
+                        name="donatorName"
                         readOnly
                         placeholder=" Donator Name"
                         className="input input-bordered"
@@ -179,7 +218,7 @@ const FoodDetails = () => {
                       <input
                         type="text"
                         name="name"
-                        defaultValue={user.email}
+                        defaultValue={user?.email}
                         readOnly
                         placeholder="User Email"
                         className="input input-bordered"
@@ -207,7 +246,7 @@ const FoodDetails = () => {
                       </label>
                       <input
                         type="text"
-                        name="name"
+                        name="expDate"
                         readOnly
                         placeholder="Expire Date"
                         defaultValue={expDate}
@@ -232,7 +271,10 @@ const FoodDetails = () => {
                     </div>
                   </div>
                   <div className="md:flex gap-6 my-3">
-                    <button className="btn btn-success block mx-auto text-white">
+                    <button
+                      type="submit"
+                      className="btn btn-success block mx-auto text-white"
+                    >
                       Request
                     </button>
                   </div>
