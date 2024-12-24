@@ -16,7 +16,7 @@ const AddFood = () => {
     const image = form.image.value;
     const quantity = form.quantity.value;
     const pickLocation = form.pickLocation.value;
-    const date = startDate;
+    const expDate = startDate;
     const notes = form.notes.value;
 
     const foodInfo = {
@@ -24,7 +24,7 @@ const AddFood = () => {
       image,
       quantity,
       pickLocation,
-      date,
+      expDate,
       notes,
       donatorName: user?.displayName,
       donatorImg: user?.photoURL,
@@ -32,9 +32,11 @@ const AddFood = () => {
       status: "available",
     };
 
+    console.log(foodInfo);
+
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/add-food`, foodInfo);
-      form.reset();
+      // form.reset();
       toast.success("Data Added Successfully !!!");
     } catch (error) {
       toast.error(error.message);

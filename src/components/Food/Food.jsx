@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { format } from "date-fns";
 
 const Food = ({ food }) => {
   const {
@@ -8,7 +9,7 @@ const Food = ({ food }) => {
     image,
     quantity,
     pickLocation,
-    date,
+    expDate,
     notes,
     donatorName,
     donatorImg,
@@ -23,20 +24,21 @@ const Food = ({ food }) => {
         <h2 className="card-title text-2xl">{name}</h2>
         <div className="flex justify-between items-center">
           <p>
-            <span className="font-bold">Quantity</span>
-            <p className="font-semibold">{quantity}</p>
+            <span className="font-bold">Quantity : </span>
+            {quantity}
           </p>
           <p className="font-semibold text-right">
-            <span className="font-bold">Expire Date :</span> {date}
+            <span className="font-bold">Expire Date :</span>
+            {format(new Date(expDate), "P")}
           </p>
         </div>
         <div className="flex justify-between items-center flex-grow">
           <p className="font-semibold">
-            <span className="font-bold">Pick Location:</span> {pickLocation}{" "}
+            <span className="font-bold">Pick Location:</span> {pickLocation}
           </p>
         </div>
         <div className="card-actions justify-center mt-4">
-          <Link to={`/movie/${_id}`}>
+          <Link to={`/food/${_id}`}>
             <button className="text-lg py-2 px-6 rounded-full bg-gray-800 text-white border hover:bg-blue-900">
               See Details
             </button>

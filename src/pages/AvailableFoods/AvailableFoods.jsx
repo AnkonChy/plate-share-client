@@ -39,7 +39,7 @@ const AvailableFoods = () => {
             </svg>
           </label>
         </div>
-        <div className="my-4">
+        <div className="my-8">
           <div className="flex items-center justify-end gap-4">
             <select
               name="category"
