@@ -9,7 +9,6 @@ const FeaturedFoods = () => {
       .then((res) => res.json())
       .then((data) => setFeaturedFoods(data));
   }, []);
-  console.log(featuredFoods);
 
   return (
     <div className="my-12">

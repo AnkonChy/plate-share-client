@@ -53,7 +53,8 @@ const FoodDetails = () => {
     try {
       await axios.post(
         `${import.meta.env.VITE_API_URL}/addFoodRequest`,
-        foodInfo
+        foodInfo,
+        { withCredentials: true }
       );
       // form.reset();
       toast.success("Food Request Successfully !!!");

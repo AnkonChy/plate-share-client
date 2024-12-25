@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Food from "../../components/Food/Food";
+import axios from "axios";
 
 const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
@@ -8,13 +9,13 @@ const AvailableFoods = () => {
   const [sort, setSort] = useState("");
 
   useEffect(() => {
-    fetch(
-      `${
-        import.meta.env.VITE_API_URL
-      }/all-available-foods?searchParams=${search}&sort=${sort}`
-    )
-      .then((res) => res.json())
-      .then((data) => setAvailableFoods(data));
+    axios
+      .get(
+        `${
+          import.meta.env.VITE_API_URL
+        }/all-available-foods?searchParams=${search}&sort=${sort}`
+      )
+      .then((res) => setAvailableFoods(res.data));
   }, [search, sort]);
 
   const handleReset = () => {

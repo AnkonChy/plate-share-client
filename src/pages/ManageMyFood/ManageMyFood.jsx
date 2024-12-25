@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/Provider/AuthProvider";
 import ManageFood from "../../components/ManageFood/ManageFood";
+import axios from "axios";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ManageMyFood = () => {
   const { user } = useContext(AuthContext);
@@ -8,10 +10,17 @@ const ManageMyFood = () => {
 
   const [manageFoods, setManageFoods] = useState([]);
 
+  const axiosSecure = useAxiosSecure();
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/manageMyFood?email=${email}`)
-      .then((res) => res.json())
-      .then((data) => setManageFoods(data));
+    // axios
+    //   .get(`${import.meta.env.VITE_API_URL}/manageMyFood?email=${email}`, {
+    //     withCredentials: true,
+    //   })
+    //   .then((res) => setManageFoods(res.data));
+
+    axiosSecure
+      .get(`${import.meta.env.VITE_API_URL}/manageMyFood?email=${email}`)
+      .then((res) => setManageFoods(res.data));
   }, [email]);
 
   return (
