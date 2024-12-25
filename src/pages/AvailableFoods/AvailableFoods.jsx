@@ -7,6 +7,7 @@ const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
+  const [isTwoColumn, setIsTwoColumn] = useState(false);
 
   useEffect(() => {
     axios
@@ -68,11 +69,21 @@ const AvailableFoods = () => {
             <button onClick={handleReset} className="btn">
               Reset
             </button>
+            <button
+              onClick={() => setIsTwoColumn(!isTwoColumn)}
+              className="btn"
+            >
+              Change Layout
+            </button>
           </div>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div
+        className={`grid  ${
+          isTwoColumn ? "md:grid-cols-2" : "md:grid-cols-3"
+        } gap-10`}
+      >
         {availableFoods.map((food) => (
           <Food key={food._id} food={food}></Food>
         ))}
