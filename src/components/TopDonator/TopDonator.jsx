@@ -19,7 +19,7 @@ const TopDonator = () => {
       <h1 className=" animate__animated animate__fadeInLeft text-3xl md:text-4xl lg:text-5xl font-bold">
         Top Donator
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-14">
         {topDonator.map((donator) => (
           <div
             key={donator._id}

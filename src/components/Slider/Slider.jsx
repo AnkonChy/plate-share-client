@@ -25,14 +25,21 @@ const Slider = () => {
     >
       <SwiperSlide>
         <img
-          className="w-full lg:h-[600px] object-cover"
+          className="w-full h-96 lg:h-[600px] object-cover"
           src="https://i.ibb.co.com/jrpSZyr/slider2.jpg"
           alt=""
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          className="w-full lg:h-[600px] object-cover"
+          className="w-full h-96 lg:h-[600px] object-cover"
+          src="https://i.ibb.co.com/bJKvMBW/AA-20231222-33249874-33249859-FOOD-AID-TO-FAMILIES-DISPLACED-TO-SOUTHERN-GAZA-AMID-ISRAELI-ATTACKS.webp"
+          alt=""
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          className="w-full h-96 lg:h-[600px] object-cover"
           src="https://i.ibb.co.com/2sRqtxn/slider4.jpg"
           alt=""
         />
