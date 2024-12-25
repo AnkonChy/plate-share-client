@@ -4,12 +4,18 @@ import Food from "../../components/Food/Food";
 
 const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/all-available-foods`)
+    fetch(
+      `${
+        import.meta.env.VITE_API_URL
+      }/all-available-foods?searchParams=${search}`
+    )
       .then((res) => res.json())
       .then((data) => setAvailableFoods(data));
-  }, []);
+  }, [search]);
+
   return (
     <div className="w-10/12 mx-auto mt-8">
       <h1 className="text-5xl font-bold text-center my-8">
