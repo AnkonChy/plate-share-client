@@ -5,7 +5,7 @@ import ManageFood from "../../components/ManageFood/ManageFood";
 const ManageMyFood = () => {
   const { user } = useContext(AuthContext);
   const { email } = user;
-  console.log(email);
+
   const [manageFoods, setManageFoods] = useState([]);
 
   useEffect(() => {
@@ -13,13 +13,10 @@ const ManageMyFood = () => {
       .then((res) => res.json())
       .then((data) => setManageFoods(data));
   }, [email]);
-  console.log(manageFoods);
 
   return (
     <div className="w-1/2 mx-auto bg-slate-50 mt-14">
-      <h1 className="text-5xl font-bold text-center my-8">
-        All Avaiable Foods
-      </h1>
+      <h1 className="text-5xl font-bold text-center my-8">Manage My Foods</h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

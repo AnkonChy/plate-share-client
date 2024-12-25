@@ -35,6 +35,7 @@ const FoodDetails = () => {
     const donatorName = form.donatorName.value;
     const pickLocation = form.pickLocation.value;
     const expDate = startDate;
+    const requestDate = form.requestDate.value;
     const notes = form.notes.value;
 
     const foodInfo = {
@@ -43,6 +44,7 @@ const FoodDetails = () => {
       foodId,
       pickLocation,
       expDate,
+      requestDate,
       notes,
       donatorName,
       donatorEmail,
@@ -232,6 +234,7 @@ const FoodDetails = () => {
                         </span>
                       </label>
                       <DatePicker
+                        name="requestDate"
                         readOnly
                         className="border p-3 rounded-xl"
                         selected={startDate}
@@ -249,7 +252,7 @@ const FoodDetails = () => {
                         name="expDate"
                         readOnly
                         placeholder="Expire Date"
-                        defaultValue={expDate}
+                        defaultValue={format(new Date(expDate), "P")}
                         className="input input-bordered"
                         required
                       />

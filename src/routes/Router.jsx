@@ -60,7 +60,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/foodRequest",
-        element: <FoodRequest></FoodRequest>,
+        element: (
+          <PrivateRoute>
+            <FoodRequest></FoodRequest>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update/:id",
