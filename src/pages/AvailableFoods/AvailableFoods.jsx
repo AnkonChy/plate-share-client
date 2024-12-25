@@ -5,17 +5,22 @@ import Food from "../../components/Food/Food";
 const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
 
   useEffect(() => {
     fetch(
       `${
         import.meta.env.VITE_API_URL
-      }/all-available-foods?searchParams=${search}`
+      }/all-available-foods?searchParams=${search}&sort=${sort}`
     )
       .then((res) => res.json())
       .then((data) => setAvailableFoods(data));
-  }, [search]);
+  }, [search, sort]);
 
+  const handleReset = () => {
+    setSearch("");
+    setSort("");
+  };
   return (
     <div className="w-10/12 mx-auto mt-8">
       <h1 className="text-5xl font-bold text-center my-8">
@@ -29,6 +34,7 @@ const AvailableFoods = () => {
               className="grow"
               placeholder="Search"
               onChange={(e) => setSearch(e.target.value)}
+              value={search}
               name="search"
             />
             <svg
@@ -48,17 +54,19 @@ const AvailableFoods = () => {
         <div className="my-8">
           <div className="flex items-center justify-end gap-4">
             <select
-              name="category"
-              id="category"
+              name="sort"
+              id="sort"
               className="border p-4 rounded-md"
-              // onChange={(e) => setSort(e.target.value)}
-              // value={sort}
+              onChange={(e) => setSort(e.target.value)}
+              value={sort}
             >
-              <option value="">Sort By Deadline</option>
+              <option value="">Sort By Expire Date</option>
               <option value="dsc">Descending Order</option>
               <option value="asc">Ascending Order</option>
             </select>
-            <button className="btn">Reset</button>
+            <button onClick={handleReset} className="btn">
+              Reset
+            </button>
           </div>
         </div>
       </div>
