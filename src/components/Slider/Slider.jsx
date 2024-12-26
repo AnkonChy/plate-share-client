@@ -26,6 +26,13 @@ const Slider = () => {
       <SwiperSlide>
         <img
           className="w-full h-96 lg:h-[600px] object-cover"
+          src="https://i.ibb.co.com/X2yTMrB/TELEMMGLPICT000361619869-17047055095630-trans-Nv-BQz-QNjv4-Bqp-Vlber-Wd9-Eg-FPZtc-Li-MQf0-Rf-Wk3-V23.webp"
+          alt=""
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          className="w-full h-96 lg:h-[600px] object-cover"
           src="https://i.ibb.co.com/jrpSZyr/slider2.jpg"
           alt=""
         />
