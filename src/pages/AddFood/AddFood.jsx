@@ -36,7 +36,7 @@ const AddFood = () => {
 
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/add-food`, foodInfo);
-      // form.reset();
+      form.reset();
       toast.success("Data Added Successfully !!!");
     } catch (error) {
       toast.error(error.message);
