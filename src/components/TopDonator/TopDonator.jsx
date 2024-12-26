@@ -13,22 +13,25 @@ const TopDonator = () => {
     fetchTopDonator();
   }, []);
 
-
   return (
-    <div className="my-32 w-10/12 mx-auto" data-aos="flip-left" data-aos-duration="2000">
-      <h1 className=" animate__animated animate__fadeInLeft text-3xl md:text-4xl lg:text-5xl font-bold">
-        Top Donator
+    <div
+      className="my-32 w-10/12 mx-auto"
+      data-aos="flip-left"
+      data-aos-duration="2000"
+    >
+      <h1 className=" animate__animated animate__fadeInLeft text-4xl lg:text-5xl font-bold">
+        Heroes of Sharing
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-14">
         {topDonator.map((donator) => (
           <div
             key={donator._id}
-            className="card card-compact bg-base-100 shadow-xl"
+            className="card card-compact bg-base-100 shadow-xl hover:bg-gray-200 hover:shadow-2xl transition-all duration-300"
           >
             <figure>
               <img
                 referrerPolicy="no-referrer"
-                className="w-28 h-28 rounded-full object-cover"
+                className="w-28 h-28 rounded-full object-cover mt-4"
                 src={donator.donatorImg}
               />
             </figure>
@@ -38,8 +41,8 @@ const TopDonator = () => {
 
               <div>
                 <h1 className="font-medium">Donate Item: {donator.name}</h1>
-                <h1 className="font-medium">
-                  Donate Quantity: {donator.quantity}
+                <h1 className="font-medium flex-grow">
+                 <span className="font-bold">Donate Quantity:</span> {donator.quantity}
                 </h1>
               </div>
 

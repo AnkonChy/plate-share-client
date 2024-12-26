@@ -28,7 +28,7 @@ const FoodDetails = () => {
   const handleFoodRequest = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    const name = form.foodName.value;
     const image = form.image.value;
     const foodId = form.foodId.value;
     const donatorEmail = form.donatorEmail.value;
@@ -40,6 +40,7 @@ const FoodDetails = () => {
 
     const foodInfo = {
       name,
+      requestedEmail: user?.email,
       image,
       foodId,
       pickLocation,
@@ -86,8 +87,9 @@ const FoodDetails = () => {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <h3 className="font-medium text-lg">Expire Date: </h3>
-              <p>{format(new Date(expDate), "P")}</p>
+              <h3 className="font-medium text-lg">Donator Name: </h3>
+
+              {donatorName}
             </div>
           </div>
           <div className="flex justify-between items-center">
@@ -96,9 +98,8 @@ const FoodDetails = () => {
               <p>{notes}</p>
             </div>
             <div className="flex items-center gap-2">
-              <h3 className="font-medium text-lg">Donator Name: </h3>
-
-              {donatorName}
+              <h3 className="font-medium text-lg">Expire Date: </h3>
+              <p>{format(new Date(expDate), "P")}</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -127,7 +128,7 @@ const FoodDetails = () => {
                       </label>
                       <input
                         type="text"
-                        name="food-name"
+                        name="foodName"
                         readOnly
                         defaultValue={name}
                         className="input input-bordered"

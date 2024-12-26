@@ -11,7 +11,7 @@ const Donation = () => {
   }, []);
   return (
     <div className="w-10/12 mx-auto">
-      <h1 className=" animate__animated animate__fadeInLeft text-3xl md:text-4xl lg:text-5xl font-bold text-center">
+      <h1 className=" animate__animated animate__fadeInLeft text-3xl md:text-4xl lg:text-5xl font-bold md:text-center">
         You can save them
       </h1>
       <div className="grid md:grid-cols-3 gap-6 my-10">

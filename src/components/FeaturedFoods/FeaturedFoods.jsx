@@ -12,8 +12,8 @@ const FeaturedFoods = () => {
 
   return (
     <div className="my-12">
-      <h1 className="text-5xl font-bold text-center my-8">Featured Foods</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-10/12 mx-auto my-6">
+      <h1 className="text-4xl lg:text-5xl font-bold text-center my-8">Featured Foods</h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-10/12 mx-auto my-10">
         {featuredFoods.map((food) => (
           <div
             key={food._id}
@@ -21,12 +21,12 @@ const FeaturedFoods = () => {
           >
             <figure>
               <img
-                className="w-full h-80 object-cover"
+                className="w-full h-72 object-cover"
                 src={food.image}
                 alt="Movies"
               />
             </figure>
-            <div className="card-body">
+            <div className="card-body space-y-2">
               <h2 className="card-title text-2xl">{food.name}</h2>
               <div className="flex justify-between items-center">
                 <p>
@@ -43,6 +43,13 @@ const FeaturedFoods = () => {
                   <span className="font-bold">Pick Location:</span>
                   {food.pickLocation}
                 </p>
+              </div>
+              <div className="card-actions justify-center mt-4">
+                <Link to={`/food/${food._id}`}>
+                  <button className="text-base py-2 px-4 rounded-full bg-gray-800 text-white border hover:bg-blue-900">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

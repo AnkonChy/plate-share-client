@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import React from "react";
 import { FaFile, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import Swal from "sweetalert2";
 const ManageFood = ({ idx, food, manageFoods, setManageFoods }) => {
   const {
     _id,
@@ -19,13 +19,36 @@ const ManageFood = ({ idx, food, manageFoods, setManageFoods }) => {
   } = food;
 
   const handleDelete = async (id) => {
-    try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/food/${id}`);
-      const newData = manageFoods.filter((food) => id !== food._id);
-      setManageFoods(newData);
-    } catch (err) {
-      console.log(err.message);
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await axios.delete(`${import.meta.env.VITE_API_URL}/food/${id}`);
+          const newData = manageFoods.filter((food) => id !== food._id);
+          setManageFoods(newData);
+
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        } catch (err) {
+          Swal.fire({
+            title: "Error!",
+            text: "There was a problem deleting the item.",
+            icon: "error",
+          });
+          console.log(err.message);
+        }
+      }
+    });
   };
   return (
     <>
