@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/Provider/AuthProvider";
 import FoodRequestTable from "../../components/FoodRequestTable/FoodRequestTable";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const FoodRequest = () => {
   const { user } = useContext(AuthContext);
@@ -8,10 +9,11 @@ const FoodRequest = () => {
 
   const [foodRequest, setFoodRequest] = useState([]);
 
+  const axiosSecure = useAxiosSecure();
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/foodRequest?email=${email}`)
-      .then((res) => res.json())
-      .then((data) => setFoodRequest(data));
+    axiosSecure
+      .get(`${import.meta.env.VITE_API_URL}/foodRequest?email=${email}`)
+      .then((res) => setFoodRequest(res.data));
   }, [email]);
 
   return (

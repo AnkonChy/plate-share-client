@@ -8,7 +8,7 @@ The platform allows users to donate, request, and manage food resources while im
 
 ## Live URL
 
-[Live Website](#) (Replace with your live site link)
+[Live Website](#) (https://plate-share-42586.web.app/)
 
 ## Key Features
 

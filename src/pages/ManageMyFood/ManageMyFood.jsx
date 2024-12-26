@@ -12,12 +12,6 @@ const ManageMyFood = () => {
 
   const axiosSecure = useAxiosSecure();
   useEffect(() => {
-    // axios
-    //   .get(`${import.meta.env.VITE_API_URL}/manageMyFood?email=${email}`, {
-    //     withCredentials: true,
-    //   })
-    //   .then((res) => setManageFoods(res.data));
-
     axiosSecure
       .get(`${import.meta.env.VITE_API_URL}/manageMyFood?email=${email}`)
       .then((res) => setManageFoods(res.data));
