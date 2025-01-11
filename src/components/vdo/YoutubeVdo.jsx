@@ -2,9 +2,9 @@ import React from "react";
 
 const YoutubeVdo = () => {
   return (
-    <div className="bg-base-200 py-10">
+    <div className="bg-base-200 py-10 mt-20">
       <div className="w-10/12 mx-auto">
-        <div className="hero-content flex-col lg:flex-row">
+        <div className="hero-content flex-col lg:flex-row gap-6">
           <div className="w-full lg:w-1/2">
             <iframe
               className="rounded-md"
@@ -19,8 +19,8 @@ const YoutubeVdo = () => {
             ></iframe>
           </div>
           <div>
-            <h1 className="text-3xl font-bold">Share a Meal, Save a Life</h1>
-            <p className="py-6">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">Share a Meal, Save a Life</h1>
+            <p className="py-4">
               By sharing your food, you’re giving someone the chance to live.
             </p>
           </div>

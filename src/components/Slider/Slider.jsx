@@ -29,6 +29,7 @@ const Slider = () => {
           src="https://i.ibb.co.com/X2yTMrB/TELEMMGLPICT000361619869-17047055095630-trans-Nv-BQz-QNjv4-Bqp-Vlber-Wd9-Eg-FPZtc-Li-MQf0-Rf-Wk3-V23.webp"
           alt=""
         />
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-black/40 to-transparent"></div>
       </SwiperSlide>
       <SwiperSlide>
         <img
@@ -36,6 +37,7 @@ const Slider = () => {
           src="https://i.ibb.co.com/jrpSZyr/slider2.jpg"
           alt=""
         />
+         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-black/40 to-transparent"></div>
       </SwiperSlide>
       <SwiperSlide>
         <img
@@ -43,6 +45,7 @@ const Slider = () => {
           src="https://i.ibb.co.com/bJKvMBW/AA-20231222-33249874-33249859-FOOD-AID-TO-FAMILIES-DISPLACED-TO-SOUTHERN-GAZA-AMID-ISRAELI-ATTACKS.webp"
           alt=""
         />
+         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-black/40 to-transparent"></div>
       </SwiperSlide>
       <SwiperSlide>
         <img
@@ -50,6 +53,7 @@ const Slider = () => {
           src="https://i.ibb.co.com/2sRqtxn/slider4.jpg"
           alt=""
         />
+         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-black/40 to-transparent"></div>
       </SwiperSlide>
     </Swiper>
   );

@@ -6,7 +6,7 @@ const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
 
   return (
-    <div className="navbar bg-base-100 mt-4 mb-4 w-11/12 mx-auto">
+    <div className="sticky top-0 z-10 backdrop-blur-md md:px-10 navbar mt-4 mb-4 w-full mx-auto">
       <div className="navbar-start">
         <div>
           <Link className="animate__animated animate__rubberBand Left text-2xl md:text-3xl font-bold">
@@ -19,8 +19,15 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/availableFoods">Available Foods</NavLink>
           <NavLink to="/addFood">Add Food</NavLink>
-          <NavLink to="/manageMyFood">Manage My Foods</NavLink>
-          <NavLink to="/foodRequest">My Food Request</NavLink>
+          {user ? (
+            <>
+              <NavLink to="/manageMyFood">Manage Foods</NavLink>
+              <NavLink to="/foodRequest">Food Request</NavLink>
+            </>
+          ) : (
+            ""
+          )}
+          <NavLink to="/aboutUs">About Us</NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-3">
@@ -42,7 +49,7 @@ const Navbar = () => {
         )}
         {user ? (
           <button
-            className="py-2 px-4 bg-blue-900 text-white rounded"
+            className="py-2 px-4 bg-[#01aa90] text-white rounded"
             onClick={handleLogout}
           >
             Logout
@@ -50,7 +57,7 @@ const Navbar = () => {
         ) : (
           <>
             <NavLink to="/login">
-              <button className="py-1 px-2 md:py-2 md:px-4 bg-blue-900 text-white rounded">
+              <button className="py-1 px-2 md:py-2 md:px-4 bg-[#008080]  text-white rounded">
                 Login
               </button>
             </NavLink>

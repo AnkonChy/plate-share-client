@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import FoodDetails from "../pages/FoodDetails/FoodDetails";
 import UpdateFood from "../pages/UpdateFood/UpdateFood";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/food/${params.id}`),
       },
+      {
+        path:"/aboutUs",
+        element: <AboutUs></AboutUs>
+      }
     ],
   },
 ]);

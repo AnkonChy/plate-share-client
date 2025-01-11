@@ -11,17 +11,19 @@ const FeaturedFoods = () => {
   }, []);
 
   return (
-    <div className="my-12">
-      <h1 className="text-4xl lg:text-5xl font-bold text-center my-8">Featured Foods</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-10/12 mx-auto my-10">
+    <div className="mt-20">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">
+        Featured Foods
+      </h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-10/12 mx-auto my-12">
         {featuredFoods.map((food) => (
           <div
             key={food._id}
-            className="card card-compact bg-base-100 shadow-xl rounded-xl"
+            className="card card-compact bg-base-100 shadow-xl rounded-xl group"
           >
             <figure>
               <img
-                className="w-full h-72 object-cover"
+                className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110"
                 src={food.image}
                 alt="Movies"
               />
@@ -46,7 +48,7 @@ const FeaturedFoods = () => {
               </div>
               <div className="card-actions justify-center mt-4">
                 <Link to={`/food/${food._id}`}>
-                  <button className="text-base py-2 px-4 rounded-full bg-gray-800 text-white border hover:bg-blue-900">
+                  <button className="text-base py-2 px-4 rounded-lg bg-[#008080] text-white border hover:bg-teal-800">
                     View Details
                   </button>
                 </Link>
@@ -56,7 +58,7 @@ const FeaturedFoods = () => {
         ))}
       </div>
       <NavLink to="/availableFoods">
-        <button className="text-lg py-3 px-8 rounded-full text-[#01AA90] border-2 border-[#01AA90] hover:bg-[#01AA90] hover:text-white  block mx-auto">
+        <button className="text-lg py-2 px-6 rounded-full text-[#01AA90] border-2 border-[#01AA90] hover:bg-[#01AA90] hover:text-white  block mx-auto">
           Show All
         </button>
       </NavLink>

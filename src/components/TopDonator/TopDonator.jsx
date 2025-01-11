@@ -15,18 +15,18 @@ const TopDonator = () => {
 
   return (
     <div
-      className="my-32 w-10/12 mx-auto"
+      className="mt-20 w-10/12 mx-auto"
       data-aos="flip-left"
       data-aos-duration="2000"
     >
-      <h1 className=" animate__animated animate__fadeInLeft text-4xl lg:text-5xl font-bold">
+      <h1 className=" animate__animated animate__fadeInLeft text-3xl md:text-4xl lg:text-5xl font-bold">
         Heroes of Sharing
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 my-12">
         {topDonator.map((donator) => (
           <div
             key={donator._id}
-            className="card card-compact bg-base-100 shadow-xl hover:bg-gray-200 hover:shadow-2xl transition-all duration-300"
+            className="card card-compact bg-base-100 shadow-xl hover:bg-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col"
           >
             <figure>
               <img
@@ -35,19 +35,22 @@ const TopDonator = () => {
                 src={donator.donatorImg}
               />
             </figure>
-            <div className="flex flex-col justify-center items-center space-y-4 mt-4 p-4">
+            <div className="flex flex-col justify-center items-center space-y-4 mt-4 p-4 flex-grow">
               <h2 className="text-2xl font-bold"></h2>
               <h1 className="text-lg font-bold">{donator.donatorName}</h1>
 
               <div>
                 <h1 className="font-medium">Donate Item: {donator.name}</h1>
-                <h1 className="font-medium flex-grow">
-                 <span className="font-bold">Donate Quantity:</span> {donator.quantity}
+                <h1 className="font-medium">
+                  <span className="font-bold">Donate Quantity:</span>{" "}
+                  {donator.quantity}
                 </h1>
               </div>
 
               <div className="card-actions justify-end">
-                <button className="btn btn-success">Contact</button>
+                <button className="bg-[#008080] text-white px-4 py-2 rounded-md hover:bg-teal-900">
+                  Contact
+                </button>
               </div>
             </div>
           </div>

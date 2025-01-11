@@ -10,11 +10,11 @@ const Donation = () => {
       .then((res) => setDonation(res.data));
   }, []);
   return (
-    <div className="w-10/12 mx-auto">
+    <div className="mt-20 w-10/12 mx-auto">
       <h1 className=" animate__animated animate__fadeInLeft text-3xl md:text-4xl lg:text-5xl font-bold md:text-center">
         You can save them
       </h1>
-      <div className="grid md:grid-cols-3 gap-6 my-10">
+      <div className="grid md:grid-cols-3 gap-6 my-12">
         {donation.map((singleDonation) => (
           <div
             key={singleDonation._id}
@@ -30,11 +30,11 @@ const Donation = () => {
             <div className="card-body">
               <h2 className="card-title">{singleDonation.title}</h2>
               <p>{singleDonation.description}</p>
-              <div className="flex justify-between my-4 items-center">
+              <div className="flex my-4 items-center">
                 <p className="font-bold">
                   Raised: $<span className="font-medium">{singleDonation.raised}</span>
                 </p>
-                <p className="font-bold">
+                <p className="font-bold text-right">
                   Goal: $<span className="font-medium">{singleDonation.goal}</span>
                 </p>
               </div>
