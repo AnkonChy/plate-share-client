@@ -18,11 +18,11 @@ const Donation = () => {
         {donation.map((singleDonation) => (
           <div
             key={singleDonation._id}
-            className="card card-compact bg-base-100 shadow-xl"
+            className="card card-compact bg-base-100 shadow-xl group"
           >
             <figure>
               <img
-                className="object-cover"
+                className="object-cover transition-transform duration-300 group-hover:scale-110"
                 src={singleDonation.image}
                 alt="Shoes"
               />
@@ -32,10 +32,12 @@ const Donation = () => {
               <p>{singleDonation.description}</p>
               <div className="flex my-4 items-center">
                 <p className="font-bold">
-                  Raised: $<span className="font-medium">{singleDonation.raised}</span>
+                  Raised: $
+                  <span className="font-medium">{singleDonation.raised}</span>
                 </p>
                 <p className="font-bold text-right">
-                  Goal: $<span className="font-medium">{singleDonation.goal}</span>
+                  Goal: $
+                  <span className="font-medium">{singleDonation.goal}</span>
                 </p>
               </div>
             </div>

@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const AddFood = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -45,6 +46,9 @@ const AddFood = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>PlateShare | Add Food</title>
+      </Helmet>
       <div className="bg-[#F4F3F0] p-4 lg:p-24">
         <h2 className="text-3xl text-center font-bold">Add Food</h2>
         <form onSubmit={handleSubmit}>

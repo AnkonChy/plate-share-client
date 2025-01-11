@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Food from "../../components/Food/Food";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
@@ -24,6 +25,10 @@ const AvailableFoods = () => {
     setSort("");
   };
   return (
+    <>
+    <Helmet>
+      <title>PlateShare | Available Foods</title>
+    </Helmet>
     <div className="w-10/12 mx-auto mt-8">
       <h1 className="text-5xl font-bold text-center my-8">
         All Avaiable Foods
@@ -89,6 +94,7 @@ const AvailableFoods = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
