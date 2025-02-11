@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { Link, NavLink } from "react-router-dom";
+import { FaMapLocationDot } from "react-icons/fa6";
+import { MdDateRange } from "react-icons/md";
 const FeaturedFoods = () => {
   const [featuredFoods, setFeaturedFoods] = useState([]);
 
@@ -32,19 +34,22 @@ const FeaturedFoods = () => {
             </figure>
             <div className="card-body space-y-2">
               <h2 className="card-title text-2xl">{food.name}</h2>
+              <p className="text-base text-justify">
+                {food.notes.slice(0, 81)}...
+              </p>
               <div className="flex justify-between items-center">
                 <p>
                   <span className="font-bold">Quantity:</span>
                   {food.quantity}
                 </p>
-                <p className="font-semibold text-right">
-                  <span className="font-bold">Expire Date:</span>
+                <p className="font-semibold flex items-center justify-end gap-1">
+                  <MdDateRange className="text-lg" />
                   {format(new Date(food.expDate), "P")}
                 </p>
               </div>
               <div className="flex justify-between items-center flex-grow">
-                <p className="font-semibold">
-                  <span className="font-bold">Pick Location:</span>
+                <p className="font-semibold flex items-center gap-1">
+                  <FaMapLocationDot className="text-lg" />
                   {food.pickLocation}
                 </p>
               </div>

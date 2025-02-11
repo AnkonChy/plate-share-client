@@ -75,6 +75,9 @@ const FoodDetails = () => {
         </div>
         <div className=" p-10 space-y-4 w-full lg:w-1/2">
           <h1 className="text-4xl font-bold">{name}</h1>
+          <div>
+            <p>{notes}</p>
+          </div>
           <p className="font-medium">
             <span className="text-lg">Quantity: </span>
             {quantity}
@@ -94,18 +97,15 @@ const FoodDetails = () => {
           </div>
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <h3 className="font-medium text-lg">Notes:</h3>
-              <p>{notes}</p>
+              <h3 className="font-medium text-lg">Donator Email : </h3>
+              {donatorEmail}
             </div>
             <div className="flex items-center gap-2">
               <h3 className="font-medium text-lg">Expire Date: </h3>
               <p>{format(new Date(expDate), "P")}</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <h3 className="font-medium text-lg">Donator Email : </h3>
-            {donatorEmail}
-          </div>
+
           <div>
             <button
               onClick={() => document.getElementById("my_modal_5").showModal()}
