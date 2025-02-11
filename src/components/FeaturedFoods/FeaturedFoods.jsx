@@ -25,7 +25,7 @@ const FeaturedFoods = () => {
           >
             <figure>
               <img
-                className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                 src={food.image}
                 alt="Movies"
               />

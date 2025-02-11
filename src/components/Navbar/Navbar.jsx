@@ -6,7 +6,7 @@ const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
 
   return (
-    <div className="sticky top-0 z-10 backdrop-blur-md md:px-14 lg:px-32 navbar mt-4 mb-4 w-full mx-auto">
+    <div className="sticky top-0 z-10 backdrop-blur-md md:px-14 lg:px-[126px] navbar mt-4 mb-4 w-full mx-auto">
       <div className="navbar-start">
         <div>
           <Link className="animate__animated animate__rubberBand Left text-2xl md:text-3xl font-bold">
