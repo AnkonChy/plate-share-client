@@ -48,9 +48,11 @@ const TopDonator = () => {
               </div>
 
               <div className="card-actions justify-end">
-                <button className="bg-[#008080] text-white px-4 py-2 rounded-md hover:bg-teal-900">
-                  Contact
-                </button>
+                <a href="https://meet.google.com/aoc-dwre-jtn" target="_blank">
+                  <button className="bg-[#008080] text-white px-4 py-2 rounded-md hover:bg-teal-900">
+                    Contact
+                  </button>
+                </a>
               </div>
             </div>
           </div>

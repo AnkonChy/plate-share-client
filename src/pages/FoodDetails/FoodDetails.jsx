@@ -79,7 +79,7 @@ const FoodDetails = () => {
             <p>{notes}</p>
           </div>
           <p className="font-medium">
-            <span className="text-lg">Quantity: </span>
+            <span className="text-lg">Quantity : </span>
             {quantity}
           </p>
           <div className="flex justify-between items-center">

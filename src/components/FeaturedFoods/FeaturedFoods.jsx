@@ -27,7 +27,7 @@ const FeaturedFoods = () => {
           >
             <figure>
               <img
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110"
                 src={food.image}
                 alt="Movies"
               />
@@ -39,7 +39,7 @@ const FeaturedFoods = () => {
               </p>
               <div className="flex justify-between items-center">
                 <p>
-                  <span className="font-bold">Quantity:</span>
+                  <span className="font-bold">Quantity : </span>
                   {food.quantity}
                 </p>
                 <p className="font-semibold flex items-center justify-end gap-1">
@@ -55,7 +55,7 @@ const FeaturedFoods = () => {
               </div>
               <div className="card-actions justify-center mt-4">
                 <Link to={`/food/${food._id}`}>
-                  <button className="text-base py-2 px-4 rounded-lg bg-[#008080] text-white border hover:bg-teal-800">
+                  <button className="text-base py-2 px-3 rounded-lg bg-[#01AA90] text-white border hover:bg-teal-800 font-medium">
                     View Details
                   </button>
                 </Link>

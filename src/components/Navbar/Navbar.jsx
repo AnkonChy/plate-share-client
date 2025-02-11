@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import "./Navbar.css";
+import ThemeToggle2 from "../ThemeToggle/ThemeToggle2";
 const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
 
@@ -15,7 +16,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-lg md:text-xl font-semibold gap-6">
+        <ul className="menu menu-horizontal px-1 text-base md:text-lg font-semibold gap-6">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/availableFoods">Available Foods</NavLink>
           <NavLink to="/addFood">Add Food</NavLink>
@@ -56,6 +57,7 @@ const Navbar = () => {
           </button>
         ) : (
           <>
+            <ThemeToggle2 />
             <NavLink to="/login">
               <button className="py-1 px-2 md:py-2 md:px-4 bg-[#008080]  text-white rounded">
                 Login
