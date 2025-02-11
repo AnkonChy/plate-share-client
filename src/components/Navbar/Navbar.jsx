@@ -6,7 +6,7 @@ const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
 
   return (
-    <div className="sticky top-0 z-10 backdrop-blur-md md:px-10 navbar mt-4 mb-4 w-full mx-auto">
+    <div className="sticky top-0 z-10 backdrop-blur-md md:px-14 lg:px-32 navbar mt-4 mb-4 w-full mx-auto">
       <div className="navbar-start">
         <div>
           <Link className="animate__animated animate__rubberBand Left text-2xl md:text-3xl font-bold">
@@ -88,13 +88,14 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="z-10 menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 p-2 shadow right-0 gap-3"
+            className="z-10 menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 p-2 shadow right-0 gap-3 w-40 font-semibold"
           >
             <NavLink to="/">Home</NavLink>
             <NavLink to="/availableFoods">Available Foods</NavLink>
             <NavLink to="/addFood">Add Food</NavLink>
             <NavLink to="/manageMyFood">Manage My Foods</NavLink>
             <NavLink to="/foodRequest">My Food Request</NavLink>
+            <NavLink to="/aboutUs">About Us</NavLink>
           </ul>
         </div>
       </div>
