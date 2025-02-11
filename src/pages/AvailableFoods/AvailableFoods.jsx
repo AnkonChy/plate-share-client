@@ -8,7 +8,7 @@ const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
-  const [isTwoColumn, setIsTwoColumn] = useState(false);
+  const [isFourColumn, setisFourColumn] = useState(false);
 
   useEffect(() => {
     axios
@@ -75,7 +75,7 @@ const AvailableFoods = () => {
               Reset
             </button>
             <button
-              onClick={() => setIsTwoColumn(!isTwoColumn)}
+              onClick={() => setisFourColumn(!isFourColumn)}
               className="btn"
             >
               Change Layout
@@ -86,8 +86,8 @@ const AvailableFoods = () => {
 
       <div
         className={`grid  ${
-          isTwoColumn ? "md:grid-cols-2" : "md:grid-cols-3"
-        } gap-10`}
+          isFourColumn ? "md:grid-cols-4" : "md:grid-cols-3"
+        } gap-4`}
       >
         {availableFoods.map((food) => (
           <Food key={food._id} food={food}></Food>

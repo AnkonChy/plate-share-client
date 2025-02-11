@@ -18,7 +18,7 @@ const Food = ({ food }) => {
   return (
     <div className="card card-compact bg-base-100 shadow-xl rounded-none">
       <figure>
-        <img className="w-full h-96 object-cover" src={image} alt="Movies" />
+        <img className="w-full  h-64 object-cover" src={image} alt="Movies" />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-2xl">{name}</h2>
