@@ -32,10 +32,10 @@ const FeaturedFoods = () => {
                 alt="Movies"
               />
             </figure>
-            <div className="card-body space-y-2">
+            <div className="card-body space-y-1">
               <h2 className="card-title text-2xl">{food.name}</h2>
-              <p className="text-base text-justify">
-                {food.notes.slice(0, 81)}...
+              <p className="text-sm text-justify">
+                {food.notes.slice(0, 98)}...
               </p>
               <div className="flex justify-between items-center">
                 <p>

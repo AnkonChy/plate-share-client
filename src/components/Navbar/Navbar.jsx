@@ -31,13 +31,7 @@ const Navbar = () => {
           <NavLink to="/aboutUs">About Us</NavLink>
         </ul>
       </div>
-      <div className="navbar-end gap-3">
-        {/* <input
-          type="checkbox"
-          className="toggle theme-controller hidden md:block"
-          onChange={handleThemeChange}
-          checked={theme === "dark"}
-        /> */}
+      <div className="navbar-end gap-2">
         {user ? (
           <img
             referrerPolicy="no-referrer"
