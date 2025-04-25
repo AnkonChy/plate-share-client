@@ -28,7 +28,7 @@ const Navbar = () => {
           ) : (
             ""
           )}
-          <NavLink to="/aboutUs">About Us</NavLink>
+          <NavLink to="/aboutUs">About</NavLink>
           <NavLink to="/support">Support</NavLink>
         </ul>
       </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
             <NavLink to="/addFood">Add Food</NavLink>
             <NavLink to="/manageMyFood">Manage My Foods</NavLink>
             <NavLink to="/foodRequest">My Food Request</NavLink>
-            <NavLink to="/aboutUs">About Us</NavLink>
+            <NavLink to="/aboutUs">About</NavLink>
             <NavLink to="/support">Support</NavLink>
           </ul>
         </div>

@@ -12,7 +12,6 @@ const FeaturedFoods = () => {
       .then((data) => setFeaturedFoods(data));
   }, []);
 
-  console.log(featuredFoods);
 
   return (
     <div className="mt-20">
