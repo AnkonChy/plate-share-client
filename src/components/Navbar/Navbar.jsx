@@ -29,6 +29,7 @@ const Navbar = () => {
             ""
           )}
           <NavLink to="/aboutUs">About Us</NavLink>
+          <NavLink to="/support">Support</NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-2">
@@ -92,6 +93,7 @@ const Navbar = () => {
             <NavLink to="/manageMyFood">Manage My Foods</NavLink>
             <NavLink to="/foodRequest">My Food Request</NavLink>
             <NavLink to="/aboutUs">About Us</NavLink>
+            <NavLink to="/support">Support</NavLink>
           </ul>
         </div>
       </div>

@@ -12,6 +12,7 @@ import FoodDetails from "../pages/FoodDetails/FoodDetails";
 import UpdateFood from "../pages/UpdateFood/UpdateFood";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AboutUs from "../pages/AboutUs/AboutUs";
+import Support from "../pages/Support/Support";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path:"/aboutUs",
         element: <AboutUs></AboutUs>
+      },
+      {
+        path:"/support",
+        element: <Support/>
       }
     ],
   },
